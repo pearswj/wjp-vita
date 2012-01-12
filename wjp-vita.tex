@@ -1,0 +1,181 @@
+
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{natbib,multirow}
+\usepackage[bf,small]{caption2}
+\usepackage{parskip}
+\usepackage{array}
+%\usepackage{hyperref}
+
+\RequirePackage{fancybox}
+
+\setlength{\textwidth}{17.2cm}
+\setlength{\textheight}{25.2cm}
+\setlength{\topmargin}{-2cm}
+\setlength{\oddsidemargin}{-0.6cm}
+\setlength{\evensidemargin}{-0.4cm}
+\setlength{\headheight}{9pt}
+
+\hbadness=100000
+\hfuzz=50pt
+
+\RequirePackage[small]{titlesec}
+\titleformat{\section}
+{\large\bfseries}{\large\thesection}{1.5em}{}
+\titleformat{\subsection}
+{\normalsize\bfseries}{\normalsize\thesubsection}{1.5em}{\textit}
+\titleformat{\subsubsection}
+{\small\bfseries}{\small\thesubsubsection}{1.5em}{\textit}
+
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+\renewcommand\figurename{Fig.}
+\renewcommand{\captionlabeldelim}{}
+
+
+%-------------------------------------------
+
+\begin{document}
+
+%\begin{flushright}
+%\footnotesize{CIV441: Assessed Exercise 2011\\
+%Department of Civil and Structural Engineering, University of Sheffield}
+%\end{flushright}
+%\vspace{0.5cm}
+%\begin{center}
+\noindent{\Huge \textbf{Will Pearson}}\\
+
+\noindent \textit{wpearson01@gmail.com\hspace{5mm}$\cdot$\hspace{5mm}07882161421\hspace{5mm}$\cdot$\hspace{5mm}Badger House, Oriel Gardens, Bath. BA1 7AS}
+%\end{center}
+
+\small
+\vspace{0.8cm}
+%\paragraph{ABSTRACT:}Authors of papers are required to prepare these in a form suitable for direct inclusion within a printed proceedings. In order to ensure consistency of style throughout the proceedings, all papers must be prepared strictly according to the instructions set out in this document. Some guidance on style and content is also given. Final versions should be printed on a laser printer and submitted in accordance with departmental guidelines.
+%
+%\paragraph{\textit{Key words:}}  paper format, style, template
+
+\vspace{0.4cm}
+%\begin{multicols}{2}
+
+I am a student at Sheffield University, in my fourth year studying for an {\bf MEng in Structural Engineering with Architecture}. I have a great interest in the {\bf use and application of computing in the area of structural engineering} and am constantly looking to develop my knowledge of software and programming alongside my regular studies.
+
+Last year I undertook my dissertation module on the subject of Structural Layout Optimisation; I investigated the scope and limitations of a program written by my dissertation tutor. This involved learning some C$++$ in order to modify the program and also gave me the opportunity to use the University's High Performance Computer Cluster (Iceberg).
+
+\section*{Degree Modules}
+
+Over the last three years of my MEng degree my studies have included the following:
+
+\begin{itemize}
+\item structural mechanics and analysis (elastic and plastic, static and dynamic)
+\item engineering mathematics
+\item geotechnics
+\item engineering design, including drawing and surveying
+\item structural design projects (group and individual)
+\item bridge engineering
+\item architecture modules (lectures and studio)
+\end{itemize}
+
+My final year modules include F.E. modelling, fracture mechanics and further group design projects.
+
+\section*{Education}
+
+\hspace{-6pt}\begin{tabular}{>{\it}lll}
+%University of Sheffield & \hspace{-1mm}$\cdot$\hspace{3mm}2008 - 2012 & \hspace{-1mm}$\cdot$\hspace{3mm}2.1 (at end of 3\textsuperscript{rd} year) \\
+%Beechen Cliff Sixth Form, Bath & \hspace{-1mm}$\cdot$\hspace{3mm}2006 - 2008 & \hspace{-1mm}$\cdot$\hspace{3mm}A Level: Maths (A); Physics (B); Art (A). AS level: Computing (A) \\
+%Beechen Cliff School, Bath & \hspace{-1mm}$\cdot$\hspace{3mm}2001 - 2006 & \hspace{-1mm}$\cdot$\hspace{3mm}GCSE: 11 A--C grades
+2008 - present & University of Sheffield & Working towards a 2:1. (Due to graduate in 2012.) \\
+2006 - 2008 & Beechen Cliff Sixth Form, Bath & A Level: Maths (A); Physics (B); Art (A). AS level: Computing (A) \\
+2001 - 2006 & Beechen Cliff School, Bath & GCSE: 11 A--C grades
+\end{tabular}
+
+\section*{Employment}
+
+\subsection*{Research Assistant {\it -- Summer 2011}}
+{\it Computational Mechanics and Design (CMD) Research Group, Department of Civil and Structural Engineering, University of Sheffield}
+
+This position included formatting research papers for submission (using the \LaTeX~typesetting language) as well as drawing figures and graphs (using the Asymptote language) to be included within. I also had the chance to get involved with some of the research happening in the department including building and processing data from Finite Element models (using LS-DYNA/LS-PrePost) and writing documentation in a wiki format.
+
+During this time my ability to adapt quickly to these new software tools was thoroughly tested. I also learnt about time management and how team members, such as those in the CMD group, work collaboratively using version control systems such as Subversion. The skills I developed in formatting have since been transferred back to my studies when I took responsibility for the compilation and presentation of a feasibility report for a recent group project; My group went on to "win" the bid.
+
+\subsection*{Assistant (part-time) {\it -- Nov 2006 - Sept 2008, July - Sept 2009}}
+{\it W. M. Morrisons, Bath}
+
+\section*{Industry Experience}
+
+\hspace{-6pt}\begin{tabular}{>{\it}ll}
+Summer 2011 & Research Assistant (Dept. of Civil \& Struct. Eng., University of Sheffield) \\
+19th August 2010 & Bath Riverside Development meetings (Buro Happold, Bath office) \\
+18th August 2010	 & London 2012 Team Stadium design office inc. site visit (Buro Happold) \\
+May 2008	 & Site visit to St. David's 2 Development, Cardiff (Whitbybird) \\
+June 2007 & 3 day intro placement (Buro Happold, Bath Office)
+\end{tabular}
+
+My work experience to date has been very valuable in helping with the important decisions concerning my education as a structural engineer.
+
+\section*{Key Achievements}
+
+\begin{itemize}
+\item ``Winning'' bid in several group design/feasibility projects
+\item Duke of Edinburgh Silver Award
+\item Duke of Edinburgh Gold Award (Expedition only)
+\end{itemize}
+
+\section*{Key Skills}
+
+\subsection*{Technical Skills}
+\begin{multicols}{3}
+
+\subsubsection*{Software}
+\begin{itemize}
+\item AutoCAD
+\item Ansys (GUI \& APDL)
+\item LimitState
+\end{itemize}
+
+\subsubsection*{Formatting}
+\begin{itemize}
+\item \LaTeX
+\item Asymptote
+\item Adobe Suite CS4
+\end{itemize}
+
+\subsubsection*{Programming}
+\begin{itemize}
+\item MATLAB
+\item Linux command-line
+\item Subverison
+\end{itemize}
+
+\end{multicols}
+
+I am also in the process of learning C$++$ and have experience of compiling C/C$++$ on various platforms. I feel that I have an {\bf aptitude} for learning new software packages and programming languages. I am constantly developing my knowledge on an ad-hoc basis, for example  through the use of software under development from the community repositories in Linux.
+
+\subsection*{Personal Skills and Interests}
+
+\hspace{-6pt}\begin{tabular}{>{\it}lp{430pt}}
+Practical & I have built and maintained my own bikes and refurbished my PC. I have enjoyed teaching myself the required skills to complete these challenges. \\[4pt]
+Active & I play ice hockey for the University, a sport which demands a high level of commitment and team work on and off the ice. This year I have been involved in the running of the club and have also started coaching. \\[4pt]
+Independent & In 2008 I completed the expedition for my Duke of Edinburgh Gold Award -- a four day hike through the Massif Central of France, starting in the ski resort of Le Mont-Dore and finishing at Volvic. \\[4pt]
+& I have a full UK driving licence, with no endorsements.
+\end{tabular}
+
+\section*{References}
+
+References are available on request
+
+
+%\end{multicols}
+\end{document}
+
