@@ -1,5 +1,5 @@
 
-\documentclass[a4paper]{article}
+\documentclass[oneside,a4paper]{article}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -9,6 +9,9 @@
 \usepackage[bf,small]{caption2}
 \usepackage{parskip}
 \usepackage{array}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage{fancyhdr}
 %\usepackage{hyperref}
 
 \RequirePackage{fancybox}
@@ -44,10 +47,18 @@
 \renewcommand\figurename{Fig.}
 \renewcommand{\captionlabeldelim}{}
 
+%\pagestyle{fancy}
+%\setlength{\headheight}{15.2pt}
+%\renewcommand{\headrulewidth}{0pt}
+%\lfoot{\small\textcolor{Gray}{\it \VCRevision}}
+%\rfoot{\small\textcolor{Gray}{\it \VCAuthor}}
+
 
 %-------------------------------------------
 
 \begin{document}
+\immediate\write18{sh ./vc}
+\input{vc}
 
 %\begin{flushright}
 %\footnotesize{CIV441: Assessed Exercise 2011\\
@@ -102,20 +113,25 @@ My final year modules include F.E. modelling, fracture mechanics and further gro
 
 \section*{Employment}
 
+\subsection*{Internship {\it -- January 2012 to present}}
+{\it LimitState Ltd., Sheffield}
+
+I am currently working for LimitState Ltd. as part of the Sheffield Internship Scheme. During the course of my internship I will be involved in a number of projects including the testing and development of software and the writing of documentation.
+
 \subsection*{Research Assistant {\it -- Summer 2011}}
 {\it Computational Mechanics and Design (CMD) Research Group, Department of Civil and Structural Engineering, University of Sheffield}
 
 This position included formatting research papers for submission (using the \LaTeX~typesetting language) as well as drawing figures and graphs (using the Asymptote language) to be included within. I also had the chance to get involved with some of the research happening in the department including building and processing data from Finite Element models (using LS-DYNA/LS-PrePost) and writing documentation in a wiki format.
 
-During this time my ability to adapt quickly to these new software tools was thoroughly tested. I also learnt about time management and how team members, such as those in the CMD group, work collaboratively using version control systems such as Subversion. The skills I developed in formatting have since been transferred back to my studies when I took responsibility for the compilation and presentation of a feasibility report for a recent group project; My group went on to "win" the bid.
+During this time my ability to adapt quickly to these new software tools was thoroughly tested. I also learnt about time management and how team members, such as those in the CMD group, work collaboratively using version control systems such as Subversion. The skills I developed in formatting have since been transferred back to my studies when I took responsibility for the compilation and presentation of a feasibility report for a recent group project; My group went on to ``win'' the bid.
 
-\subsection*{Assistant (part-time) {\it -- Nov 2006 - Sept 2008, July - Sept 2009}}
+\subsection*{Assistant (part-time) {\it -- November 2006 - September 2008, July - Sept 2009}}
 {\it W. M. Morrisons, Bath}
 
-\section*{Industry Experience}
+\section*{Industry Experience} % Other Industry Experience/Work Experience?
 
 \hspace{-6pt}\begin{tabular}{>{\it}ll}
-Summer 2011 & Research Assistant (Dept. of Civil \& Struct. Eng., University of Sheffield) \\
+Summer 2011 & Research Assistant (Dept. of Civil \& Struct. Eng., University of Sheffield) \\ % remove?
 19th August 2010 & Bath Riverside Development meetings (Buro Happold, Bath office) \\
 18th August 2010	 & London 2012 Team Stadium design office inc. site visit (Buro Happold) \\
 May 2008	 & Site visit to St. David's 2 Development, Cardiff (Whitbybird) \\
@@ -148,7 +164,7 @@ My work experience to date has been very valuable in helping with the important 
 \begin{itemize}
 \item \LaTeX
 \item Asymptote
-\item Adobe Suite (CS4)
+\item Adobe Creative Suite
 \end{itemize}
 
 \subsubsection*{Programming}
@@ -174,7 +190,8 @@ Independent & In 2008 I completed the expedition part of my Duke of Edinburgh Go
 \section*{References}
 
 References are available on request
-
+\\\\\\
+\small\textcolor{Gray}{\it \VCDateTEX\quad(REV: \VCRevision)}
 
 %\end{multicols}
 \end{document}
