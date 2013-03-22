@@ -1,0 +1,216 @@
+% TODO: python + cheetah to generate latex?
+
+\documentclass[oneside,a4paper]{article}
+
+%--- Notes: 
+%
+% - consider using xelatex?
+% - added post-receive hook to pull & build & serve cv. (23/06/12)
+%
+%---
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{natbib,multirow}
+\usepackage[bf,small]{caption2}
+\usepackage{parskip}
+\usepackage{array}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+\usepackage{dtklogos}
+\usepackage{xltxtra}
+\usepackage{moresize}
+\usepackage{lastpage}
+
+\setmainfont[Mapping=tex-text]{Helvetica Neue Light}
+
+\setlength{\textwidth}{17.2cm}
+\setlength{\textheight}{25.2cm}
+\setlength{\topmargin}{-2cm}
+\setlength{\oddsidemargin}{-0.6cm}
+\setlength{\evensidemargin}{-0.4cm}
+\setlength{\headheight}{9pt}
+
+\hbadness=100000
+\hfuzz=50pt
+
+\RequirePackage[small]{titlesec}
+\titleformat{\section}
+{\large\bfseries}{\large\thesection}{1.5em}{}
+\titleformat{\subsection}
+{\normalsize\bfseries}{\normalsize\thesubsection}{1.5em}{\textit}
+\titleformat{\subsubsection}
+{\small\bfseries}{\small\thesubsubsection}{1.5em}{\textit}
+
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+  
+\renewcommand{\@oddfoot}{\hfil \thepage\ / \pageref{LastPage} \hfil}
+\makeatother
+
+\renewcommand\figurename{Fig.}
+\renewcommand{\captionlabeldelim}{}
+\newcommand{\ability}[1]{\raisebox{2pt}{\color{black}\line(1,0){#1}}}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{export.pdf}%
+\vfill
+}}}
+
+%\pagestyle{fancy}
+%\setlength{\headheight}{15.2pt}
+%\renewcommand{\headrulewidth}{0pt}
+%\lfoot{\small\textcolor{Gray}{\it \VCRevision}}
+%\rfoot{\small\textcolor{Gray}{\it \VCAuthor}}
+
+
+%-------------------------------------------
+
+\begin{document}
+%\AddToShipoutPicture*{\BackgroundPic}
+
+\noindent{\HUGE $personal.name}\\
+
+\noindent \textit{$personal.email\hspace{5mm}$\cdot$\hspace{5mm}$personal.telephone\hspace{5mm}$\cdot$\hspace{5mm}$personal.address}
+
+\small
+\vspace{0.5cm}
+%\vspace{1.0cm}
+
+% TODO: general re-write
+
+$personal.statement
+
+%section*{Degree Modules}
+%
+%Over the last three years of my MEng degree my studies have included the following:
+%
+%\begin{itemize}
+%\item structural mechanics and analysis (elastic and plastic, static and dynamic)
+%\item engineering mathematics
+%\item geotechnics
+%\item engineering design, including drawing and surveying
+%\item structural design projects (group and individual)
+%\item bridge engineering
+%\item architecture modules (lectures and studio)
+%\end{itemize}
+
+%My final year modules include F.E. modelling, fracture mechanics and further design projects.
+
+\section*{Education}
+% TODO: expand, like employment (university courses in detail and the rest just bulleted)
+#for $edu in $education:
+\subsection*{$edu.title#if $edu.end != 'present'#, $edu.qualification#end if# {\it -- $edu.start to $edu.end}}\hspace*{\fill}\\[-20pt]
+{\it $edu.location}
+
+$edu.summary
+#end for
+
+%\hspace{-6pt}\begin{tabular}{>{\it}lll}
+%#for $edu in $education:
+%$edu.start--$edu.end & $edu.title & $edu.qualification \\
+% & {\it $edu.location} & \\[5pt]
+%#end for
+%\end{tabular}
+
+\section*{Employment}
+
+#for $job in $employment:
+#if $job.type in $displaytypes:
+\subsection*{$job.position {\it -- $job.date}}\hspace*{\fill}\\[-20pt]
+{\it $job.company, $job.location}
+
+$job.description
+#end if
+#end for
+
+\section*{Work Experience} % Other Industry Experience/Work Experience?
+
+\hspace{-6pt}\begin{tabular}{>{\it}ll}
+#for $placement in $experience:
+$placement.date & $placement.title ($placement.place) \\
+#end for
+\end{tabular}
+
+
+#if $achievements:
+\section*{Publications \& Achievements}
+
+\begin{itemize}
+#for $a in $achievements:
+\item $a
+#end for
+\end{itemize}
+#end if
+
+\section*{Skills \& Interests}
+
+\subsection*{Technical Skills} % TODO: re-think section title?
+
+$skillsblurb\\
+
+\begin{center}
+\linethickness{2pt}
+\begin{tabular}{rl}
+%\begin{itemize}
+	#for $skill in $skills:
+	$skill.name & \ability{$skill.ability} \\
+	%\item $skill
+	#end for
+%\end{itemize}
+\end{tabular}
+\end{center}
+%\vspace{5mm}
+
+#if $interests:
+
+\subsection*{Personal Skills \& Interests}
+
+In my free time I enjoy...
+
+\begin{itemize}
+	#for $item in $interests:
+	\item $item
+	#end for
+\end{itemize}
+
+#end if
+% TODO: update
+%\hspace{-6pt}\begin{tabular}{>{\it}lp{430pt}}
+%Practical & I constantly challenge myself with personal projects. I have built and maintained my own bikes and, more recently, refurbished an old PC on which to learn Linux. I have enjoyed researching the required skills to complete these tasks. \\[4pt]
+%Active & I play ice hockey for the University of Sheffield, a sport which demands a high level of team work and physical commitment on and off the ice. This year I have been involved in the running of the club in both the executive committee and the coaching committee. \\[4pt]
+%Independent & In 2008 I completed the expedition part of my Duke of Edinburgh Gold Award -- a four day hike through the Massif Central of France, starting in the ski resort of Le Mont-Dore and finishing at Volvic. \\[4pt]
+I have a full UK driving licence, with no endorsements.
+%\end{tabular}
+
+\section*{References}
+
+References are available on request.
+%\\\\\\
+%\begin{center}
+%\includegraphics[width=0.7\textwidth,clip,trim=0 180 0 140]{export.pdf}
+%\end{center}
+
+\vspace{32pt}
+%\footnotesize\textcolor{Gray}{\VCDateTEX\;\;(rev \texttt{\GITAbrHash})}
+\footnotesize\textcolor{Gray}{$git.date\;\;(\texttt{$git.hash#if $git.dirty#+#end if#})}
+
+\end{document}
+
