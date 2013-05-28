@@ -130,12 +130,19 @@ interests.append('exploring opensource software projects on Github')
 
 # Git
 
+def TryRepoIsDirty():
+    try:
+        dirty = repo.is_dirty()
+    except:
+        dirty = False
+    return dirty
+
 repo = git.Repo(os.getcwd())
 head = repo.head.commit
 git = {
     'date':time.strftime("%d/%m/%Y", time.gmtime(head.authored_date)),
     'hash':head.hexsha[:10],
-    'dirty':repo.is_dirty()
+    'dirty':TryRepoIsDirty()
 }
 
 # Call template
