@@ -28,7 +28,7 @@ education.append({
     'location':'University of Bath',
     'start':'October 2012',
     'end':'present',
-    'summary':'My current studies investigate the design and application of computational tools in the fields of structural engineering and architectural design. As part of my thesis project I am currently exploring the use of manifold mesh operators in the design of free-form structural systems through a suite of custom data types and components in Grasshopper (C\#). For a previous project I wrote a Processing library (Java) for modelling orientable, manifold meshes through which I explored mesh operators and analysis methods and further developed my skills in object oriented programming.'
+    'summary':'''My current studies investigate the design and application of computational tools in the fields of structural engineering and architectural design. For my thesis project I am currently exploring the use of manifold mesh operators (Conway, subdivision, etc.) in the design of efficient, free-form, structural systems. This is implemented as a suite of custom data types and components in Grasshopper's parametric framework (C\#). For a previous project I wrote a Processing library (Java) for modelling orientable, manifold meshes. I used this exercise to explore mesh operators and analysis methods and to further develop my skills in object oriented programming.'''
 })
 education.append({
     'title':'MEng Structural Engineering with Architectural Studies',
@@ -49,6 +49,14 @@ education.append({
 
 
 employment = []
+employment.append({
+    'position':'Work Placement (part-time)',
+    'date':'May 2013 to present',
+    'company':'Ramboll Computational Design',
+    'location':'Bristol',
+    'type': 'civil',
+    'description':'''I am currently helping with the design of a pavilion at Oxford Brookes University. The project involves many aspects of computational design -- from the rationalisation and analysis of complex forms through to digital fabrication techniques.'''
+})
 employment.append({
     'position':'Ice Marshall (part-time)',
     'date':'November 2012 to January 2013',
@@ -109,11 +117,11 @@ experience.append({
 skillsblurb = 'I have experience in a number of software tools and programming languages as well as an aptitude for learning something new when necessary.'
 skills = [] # escape '&' symbols!
 skills.append({'name':'C++, Visual Studio, Qt', 'ability':'120'})
-skills.append({'name':'Java, Processing, Eclipse', 'ability':'140'})
+skills.append({'name':'Java, Processing, Eclipse', 'ability':'138'})
 skills.append({'name':'Bash, Python, Ruby, Matlab', 'ability':'150'})
 skills.append({'name':'\LaTeX, \BibTeX, Adobe CS', 'ability':'148'})
 skills.append({'name':'Git, Subversion', 'ability':'130'})
-skills.append({'name':'Rhino/Grasshopper (.NET), C\#', 'ability':'122'})
+skills.append({'name':'Rhino/Grasshopper, C\#', 'ability':'142'})
 skills.append({'name':'AutoCAD, ANSYS, Robot, GSA', 'ability':'80'})
 skills.append({'name':'GenerativeComponents, DesignScript', 'ability':'30'})
 skills.append({'name':'HTML, CSS, PHP, SQL', 'ability':'118'})
