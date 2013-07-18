@@ -12,9 +12,10 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{multicol}
-\usepackage{natbib,multirow}
+%\usepackage{natbib}
+\usepackage{multirow}
 \usepackage[bf,small]{caption2}
 \usepackage{parskip}
 \usepackage{array}
@@ -47,44 +48,24 @@
 \titleformat{\subsubsection}
 {\small\bfseries}{\small\thesubsubsection}{1.5em}{\textit}
 
-\makeatletter
-\newenvironment{tablehere}
-  {\def\@captype{table}}
-  {}
-
-\newenvironment{figurehere}
-  {\def\@captype{figure}}
-  {}
-  
-\renewcommand{\@oddfoot}{\hfil \thepage\ / \pageref{LastPage} \hfil}
+\makeatletter  
+    \renewcommand{\@oddfoot}{\hfil \thepage\ / \pageref{LastPage} \hfil}
+    %\renewcommand{\bibname}{Publications}
 \makeatother
 
-\renewcommand\figurename{Fig.}
-\renewcommand{\captionlabeldelim}{}
 \newcommand{\ability}[1]{\raisebox{2pt}{\color{black}\line(1,0){#1}}}
 
-\usepackage{eso-pic}
-\newcommand\BackgroundPic{
-\put(0,0){
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
-\includegraphics[width=\paperwidth,height=\paperheight,
-keepaspectratio]{export.pdf}%
-\vfill
-}}}
+\usepackage[style=authoryear,sorting=nty]{biblatex}
+\bibliography{papers}
+\renewcommand{\bibfont}{\setmainfont[Mapping=tex-text]{Helvetica Neue Light}}
+\DeclareNameAlias{sortname}{last-first}
 
-%\pagestyle{fancy}
-%\setlength{\headheight}{15.2pt}
-%\renewcommand{\headrulewidth}{0pt}
-%\lfoot{\small\textcolor{Gray}{\it \VCRevision}}
-%\rfoot{\small\textcolor{Gray}{\it \VCAuthor}}
-
+\setlength{\columnsep}{20pt}
+\setlength{\columnseprule}{0.5pt}
 
 %-------------------------------------------
 
 \begin{document}
-%\AddToShipoutPicture*{\BackgroundPic}
 
 \noindent{\HUGE $personal.name}\\
 
@@ -150,6 +131,11 @@ $placement.date & $placement.title ($placement.place) \\
 \end{tabular}
 
 
+% Publications
+\printbibliography[title={Publications}]
+\nocite{*}
+
+
 #if $achievements:
 \section*{Publications \& Achievements}
 
@@ -162,6 +148,9 @@ $placement.date & $placement.title ($placement.place) \\
 
 \section*{Skills \& Interests}
 
+\begin{multicols}{2}
+\raggedcolumns
+
 \subsection*{Technical Skills} % TODO: re-think section title?
 
 $skillsblurb\\
@@ -171,7 +160,7 @@ $skillsblurb\\
 \begin{tabular}{rl}
 %\begin{itemize}
 	#for $skill in $skills:
-	$skill.name & \ability{$skill.ability} \\
+	\ability{$skill.ability} & $skill.name \\
 	%\item $skill
 	#end for
 %\end{itemize}
@@ -180,6 +169,7 @@ $skillsblurb\\
 %\vspace{5mm}
 
 #if $interests:
+\columnbreak
 
 \subsection*{Personal Skills \& Interests}
 
@@ -192,24 +182,17 @@ In my free time I enjoy...
 \end{itemize}
 
 #end if
-% TODO: update
-%\hspace{-6pt}\begin{tabular}{>{\it}lp{430pt}}
-%Practical & I constantly challenge myself with personal projects. I have built and maintained my own bikes and, more recently, refurbished an old PC on which to learn Linux. I have enjoyed researching the required skills to complete these tasks. \\[4pt]
-%Active & I play ice hockey for the University of Sheffield, a sport which demands a high level of team work and physical commitment on and off the ice. This year I have been involved in the running of the club in both the executive committee and the coaching committee. \\[4pt]
-%Independent & In 2008 I completed the expedition part of my Duke of Edinburgh Gold Award -- a four day hike through the Massif Central of France, starting in the ski resort of Le Mont-Dore and finishing at Volvic. \\[4pt]
+
 I have a full UK driving licence, with no endorsements.
-%\end{tabular}
+
+\end{multicols}
 
 \section*{References}
 
 References are available on request.
-%\\\\\\
-%\begin{center}
-%\includegraphics[width=0.7\textwidth,clip,trim=0 180 0 140]{export.pdf}
-%\end{center}
 
 \vspace{32pt}
-%\footnotesize\textcolor{Gray}{\VCDateTEX\;\;(rev \texttt{\GITAbrHash})}
+
 \footnotesize\textcolor{Gray}{$git.date\;\;(\texttt{$git.hash#if $git.dirty#+#end if#})}
 
 \end{document}

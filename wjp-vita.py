@@ -129,6 +129,9 @@ skills.append({'name':'HTML, CSS, PHP, SQL', 'ability':'118'})
 skills.sort(key=lambda x: int(x['ability'])) # sort by ability
 skills.reverse()
 
+for skill in skills:
+    skill["ability"] = int(skill["ability"]) / 8
+
 
 interests = []
 interests.append('building, riding and maintaining bicycles')
