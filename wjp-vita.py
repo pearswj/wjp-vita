@@ -4,8 +4,6 @@ from Cheetah.Template import Template
 import time
 import git
 import os
-import operator
-import pexpect
 import sys
 
 # Input information
@@ -170,6 +168,11 @@ t.interests = interests
 t.git = git
 t.displaytypes = displaytypes
 
+if os.name == 'nt':
+    t.font = 'Garamond'
+else:
+    t.font = 'Helvetica Neue Light'
+
 # Write .tex file
 
 name = os.path.basename(__file__)[:-2] + 'tex'
@@ -177,6 +180,13 @@ name = os.path.basename(__file__)[:-2] + 'tex'
 f = open(name, 'w')
 f.write(str(t))
 f.close()
+
+try:
+    import pexpect
+except ImportError as e:
+    print 'Pexpect module doesn\'t like Windows'
+    print 'run `latexmk -xelatex ' + name + '` to finish'
+    sys.exit()
 
 pexpect.run('latexmk -xelatex ' + name, logfile=sys.stdout)
 pexpect.run('latexmk -c', logfile=sys.stdout)
