@@ -13,8 +13,8 @@ displaytypes = ['civil'] # civil, misc
 personal = {
     'name':'Will Pearson',
     'email':'pearswj@gmail.com',
-    'telephone':'07882161421',
-    'address':'Badger House, Oriel Gardens, Bath. BA1 7AS',
+    'telephone':'+44(0)7882161421',
+    'address':'56 Thomas More Street, London, UK. E1W 1YJ',
     'statement':'''I am a postgraduate research student at the University of Bath, currently  studying for an MPhil in the field of Digital Architectonics. I have a great interest in the application of computing to the areas of structural engineering and architectural design and I am constantly looking to build upon my experiences of software development and programming as well as developing my engineering skills.'''
 }
 
