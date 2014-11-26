@@ -150,7 +150,7 @@ repo = git.Repo(os.getcwd())
 head = repo.head.commit
 git = {
     'date':time.strftime("%d/%m/%Y", time.gmtime(head.authored_date)),
-    'hash':head.hexsha[:10],
+    'hash':head.hexsha[:7],
     'dirty':TryRepoIsDirty()
 }
 
