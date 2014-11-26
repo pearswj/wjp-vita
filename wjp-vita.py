@@ -93,7 +93,7 @@ employment.append({
     'company':'Computational Mechanics and Design Research Group, Department of Civil and Structural Engineering',
     'location':'University of Sheffield',
     'type': 'civil',
-    'description':'My initial role was to format research papers for submission (using the \LaTeX~typesetting language) as well as drawing figures and graphs (using Asymptote and Adobe Illustrator) to be included within. I also had the chance to engage with some of the ongoing research in the department, assisting with the building and processing of data from Finite Element models (using LS-DYNA/LS-PrePost) and documenting this process (including any automation scripts used) in the project\'s wiki.'
+    'description':'My main role was to format research papers for submission (using the \LaTeX~typesetting language) as well as drawing figures and graphs (using Asymptote and Adobe Illustrator) to be included within. I also had the chance to engage with some of the ongoing research in the department, assisting with the building and processing of data from Finite Element models (using LS-DYNA/LS-PrePost) and documenting this process (including any automation scripts used) in the project\'s wiki.'
 })
 
 
