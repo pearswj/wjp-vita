@@ -2,7 +2,7 @@
 
 \documentclass[oneside,a4paper]{article}
 
-%--- Notes: 
+%--- Notes:
 %
 % - consider using xelatex?
 % - added post-receive hook to pull & build & serve cv. (23/06/12)
@@ -48,7 +48,7 @@
 \titleformat{\subsubsection}
 {\small\bfseries}{\small\thesubsubsection}{1.5em}{\textit}
 
-\makeatletter  
+\makeatletter
     \renewcommand{\@oddfoot}{\hfil \thepage\ / \pageref{LastPage} \hfil}
     %\renewcommand{\bibname}{Publications}
 \makeatother
@@ -79,21 +79,18 @@
 
 $personal.statement
 
-%section*{Degree Modules}
-%
-%Over the last three years of my MEng degree my studies have included the following:
-%
-%\begin{itemize}
-%\item structural mechanics and analysis (elastic and plastic, static and dynamic)
-%\item engineering mathematics
-%\item geotechnics
-%\item engineering design, including drawing and surveying
-%\item structural design projects (group and individual)
-%\item bridge engineering
-%\item architecture modules (lectures and studio)
-%\end{itemize}
 
-%My final year modules include F.E. modelling, fracture mechanics and further design projects.
+\section*{Employment}
+
+#for $job in $employment:
+#if $job.type in $displaytypes:
+\subsection*{$job.position {\it -- $job.date}}\hspace*{\fill}\\[-20pt]
+{\it $job.company, $job.location}
+
+$job.description
+#end if
+#end for
+
 
 \section*{Education}
 % TODO: expand, like employment (university courses in detail and the rest just bulleted)
@@ -111,17 +108,7 @@ $edu.summary
 %#end for
 %\end{tabular}
 
-\section*{Employment}
-
-#for $job in $employment:
-#if $job.type in $displaytypes:
-\subsection*{$job.position {\it -- $job.date}}\hspace*{\fill}\\[-20pt]
-{\it $job.company, $job.location}
-
-$job.description
-#end if
-#end for
-
+#if $experience:
 \section*{Work Experience} % Other Industry Experience/Work Experience?
 
 \hspace{-6pt}\begin{tabular}{>{\it}ll}
@@ -129,6 +116,7 @@ $job.description
 $placement.date & $placement.title ($placement.place) \\
 #end for
 \end{tabular}
+#end if
 
 
 % Publications
@@ -196,4 +184,3 @@ References are available on request.
 \footnotesize\textcolor{Gray}{$git.date\;\;(\texttt{$git.hash#if $git.dirty#+#end if#})}
 
 \end{document}
-

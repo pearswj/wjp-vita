@@ -90,6 +90,7 @@ employment.append({
 
 
 experience = []
+"""
 experience.append({
     'date':'19th August 2010',
     'title':'Bath Riverside Development meetings',
@@ -110,6 +111,7 @@ experience.append({
     'title':'3 day intro placement',
     'place':'Buro Happold, Bath Office'
 })
+"""
 
 
 skillsblurb = 'I have experience in a number of software tools and programming languages as well as an aptitude for learning something new when necessary.'
