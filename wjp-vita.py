@@ -15,7 +15,7 @@ personal = {
     'email':'pearswj@gmail.com',
     'telephone':'+44(0)7882161421',
     'address':'56 Thomas More Street, London, UK. E1W 1YJ',
-    'statement':'''I am a postgraduate research student at the University of Bath, currently  studying for an MPhil in the field of Digital Architectonics. I have a great interest in the application of computing to the areas of structural engineering and architectural design and I am constantly looking to build upon my experiences of software development and programming as well as developing my engineering skills.'''
+    'statement':''
 }
 
 
@@ -26,7 +26,7 @@ education.append({
     'location':'University of Bath',
     'start':'October 2012',
     'end':'present',
-    'summary':'''My current studies investigate the design and application of computational tools in the fields of structural engineering and architectural design. For my thesis project I am currently exploring the use of manifold mesh operators (Conway, subdivision, etc.) in the design of efficient, free-form, structural systems. This is implemented as a suite of custom data types and components in Grasshopper's parametric framework (C\#). For a previous project I wrote a Processing library (Java) for modelling orientable, manifold meshes. I used this exercise to explore mesh operators and analysis methods and to further develop my skills in object oriented programming.'''
+    'summary':'''My studies investigate the design and application of computational tools in the fields of structural engineering and architectural design. For my thesis project I am currently exploring the use of manifold mesh operators (Conway, subdivision, etc.) in the design of efficient, free-form, structural systems. This is implemented as a suite of custom data types and components in Grasshopper's parametric framework (C\#). For a previous project I wrote a Processing library (Java) for modelling orientable, manifold meshes. I used this exercise to explore mesh operators and analysis methods and to further develop my skills in object oriented programming.'''
 })
 education.append({
     'title':'MEng Structural Engineering with Architectural Studies',
@@ -48,12 +48,20 @@ education.append({
 
 employment = []
 employment.append({
+    'position':'Graduate Engineer',
+    'date':'September 2013 to present',
+    'company':'Ramboll UK / Ramboll Computational Design',
+    'location':'London',
+    'type': 'civil',
+    'description':''
+})
+employment.append({
     'position':'Work Placement (part-time)',
-    'date':'May 2013 to present',
+    'date':'May 2013 to August 2013',
     'company':'Ramboll Computational Design',
     'location':'Bristol',
     'type': 'civil',
-    'description':'''I am currently helping with the design of a pavilion at Oxford Brookes University. The project involves many aspects of computational design -- from the rationalisation and analysis of complex forms through to digital fabrication techniques.'''
+    'description':'''I assisted the Bristol RCD team with the design of a pavilion at Oxford Brookes University. The project involved many aspects of computational design -- from the rationalisation and analysis of complex forms through to digital fabrication techniques.'''
 })
 employment.append({
     'position':'Ice Marshall (part-time)',
