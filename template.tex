@@ -120,12 +120,15 @@ $placement.date & $placement.title ($placement.place) \\
 
 
 % Publications
-\printbibliography[title={Publications}]
-\nocite{*}
+\section*{Publications}
+\begin{itemize}
+\item \fullcite{Harding2014}
+\item \fullcite{Shepherd2013}
+\end{itemize}
 
 
 #if $achievements:
-\section*{Publications \& Achievements}
+\section*{Achievements}
 
 \begin{itemize}
 #for $a in $achievements:
