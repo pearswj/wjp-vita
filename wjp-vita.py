@@ -139,7 +139,7 @@ interests.append('exploring opensource software projects on Github')
 
 # Git
 
-def TryRepoIsDirty():
+def TryRepoIsDirty(repo):
     try:
         dirty = repo.is_dirty()
     except:
@@ -148,10 +148,12 @@ def TryRepoIsDirty():
 
 repo = git.Repo(os.getcwd())
 head = repo.head.commit
+dirty = TryRepoIsDirty(repo)
+date = time.time() if dirty else head.authored_date
 git = {
-    'date':time.strftime("%d/%m/%Y", time.gmtime(head.authored_date)),
+    'date':time.strftime("%d/%m/%Y", time.gmtime(date)),
     'hash':head.hexsha[:7],
-    'dirty':TryRepoIsDirty()
+    'dirty':dirty
 }
 
 # Call template
