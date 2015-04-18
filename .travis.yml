@@ -1,5 +1,6 @@
 language: python
 install:
+- sudo add-apt-repository ppa:texlive-backports/ppa
 - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
 - pip install -r requirements.txt
 script:
