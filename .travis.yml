@@ -5,6 +5,7 @@ install:
 - sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk texlive-xetex
 - pip install -r requirements.txt
 script:
+- latexmk --help
 - python wjp-vita.py
 deploy:
   provider: releases
