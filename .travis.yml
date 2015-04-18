@@ -1,0 +1,14 @@
+language: python
+install:
+- sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+- pip install -r requirements.txt
+script:
+- python wjp-vita.py
+deploy:
+  provider: releases
+  api_key:
+    secure: IKzT7mSOdGXpBToCtzf/Q9UooJH28JvMUDmbKAlCRfo8eLUCN3eYw6I6r+qJc+oQnt1ERD/8tXgvj/qL8BsV0djUuI140SDcdNI8XEkEzFZueVBYBeOqb4pjzkPWto+CpXtbtxFnOgNlJzWHcJX60ibxxhoQ12/OvT2wTDulQ4k=
+  file: wjp-vita.pdf
+  skip_cleanup: true
+  on:
+    tags: true
