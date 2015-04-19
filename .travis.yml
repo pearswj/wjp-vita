@@ -6,7 +6,8 @@ install:
 - sudo apt-get install -y latexmk
 - pip install -r requirements.txt
 - curl -O http://users.phys.psu.edu/~collins/software/latexmk-jcc/latexmk-439.zip
-- unzip latexmk-439.zip
+- mkdir latexmk-439
+- unzip latexmk-439.zip -d latexmk-439
 - ls latexmk-439
 script:
 - which latexmk
