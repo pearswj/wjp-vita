@@ -9,12 +9,11 @@ install:
 - mkdir latexmk-439
 - unzip latexmk-439.zip -d latexmk-439
 - ls latexmk-439
-script:
 - LTMK=`which latexmk`
-- ls -l $LTMK
-- cat $LTMK
 - sudo rm $LTMK
 - sudo ln -s `pwd`/latexmk-439/latexmk.pl $LTMK
+- sudo getnonfreefonts-sys
+script:
 - tex --version
 - latexmk --help
 - python wjp-vita.py
