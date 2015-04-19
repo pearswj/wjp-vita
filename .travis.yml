@@ -5,7 +5,12 @@ install:
 - sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex
 - sudo apt-get install -y latexmk
 - pip install -r requirements.txt
+- curl -O http://users.phys.psu.edu/~collins/software/latexmk-jcc/latexmk-439.zip
+- unzip latexmk-439.zip
+- ls latexmk-439
 script:
+- which latexmk
+- ls -l `which latexmk`
 - tex --version
 - latexmk --help
 - python wjp-vita.py
