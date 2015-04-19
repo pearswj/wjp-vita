@@ -180,10 +180,10 @@ t.interests = interests
 t.git = git
 t.displaytypes = displaytypes
 
-if os.name == 'nt':
-    t.font = 'Garamond'
-else:
-    t.font = 'Helvetica Neue Light'
+#if os.name == 'nt':
+t.font = 'Garamond'
+#else:
+#    t.font = 'Helvetica Neue Light'
 
 # Write .tex file
 
