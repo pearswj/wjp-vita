@@ -10,8 +10,11 @@ install:
 - unzip latexmk-439.zip -d latexmk-439
 - ls latexmk-439
 script:
-- which latexmk
-- ls -l `which latexmk`
+- LTMK=`which latexmk`
+- ls -l $LTMK
+- cat $LTMK
+- sudo rm $LTMK
+- sudo ln -s `pwd`/latexmk-439/latexmk.pl $LTMK
 - tex --version
 - latexmk --help
 - python wjp-vita.py
