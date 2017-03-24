@@ -8,61 +8,77 @@ import sys
 
 # Input information
 
-displaytypes = ['civil'] # civil, misc
+displaytypes = ['civil', 'software'] # civil, misc
 
 personal = {
     'name':'Will Pearson',
     'email':'pearswj@gmail.com',
     'telephone':'+44(0)7882161421',
-    'address':'56 Thomas More Street, London, UK. E1W 1YJ',
+    'address':'47 Paragon Place, London, SE3 0SP, United Kingdom',
     'statement':''
 }
 
 
 education = []
 education.append({
-    'title':'MPhil Digital Architectonics',
-    'qualification':'',
+    'title':'Digital Architectonics',
+    'qualification':None,
     'location':'University of Bath',
-    'start':'October 2012',
-    'end':'present',
-    'summary':'''My studies investigate the design and application of computational tools in the fields of structural engineering and architectural design. For my thesis project I am currently exploring the use of manifold mesh operators (Conway, subdivision, etc.) in the design of efficient, free-form, structural systems. This is implemented as a suite of custom data types and components in Grasshopper's parametric framework (C\#). For a previous project I wrote a Processing library (Java) for modelling orientable, manifold meshes. I used this exercise to explore mesh operators and analysis methods and to further develop my skills in object oriented programming.'''
+    'start':'2012',
+    'end':'2013',
+    'summary':''
 })
 education.append({
     'title':'MEng Structural Engineering with Architectural Studies',
     'qualification':'2.I (hons)',
     'location':'University of Sheffield',
-    'start':'September 2008',
-    'end':'June 2012',
-    'summary':'My undergraduate studies covered many topics from structural mechanics and dynamics, through structural design and drawing to fire engineering and statistics. I also attended lectures in the Architecture department and completed studio projects alongside first-year architecture students. During my time at Sheffield I gained an appreciation for the potential computing holds in the evolution of engineering and design. I also invloved myself in the running of the University\'s ice hockey club, building a website to help promote the club and invite sponsorship.'
-})
-education.append({
-    'title':'A/AS levels',
-    'qualification':'AABa (Maths, Art, Physics, Computing)',
-    'location':'Beechen Cliff School Sixth Form, Bath',
-    'start':'2006',
-    'end':'2008',
+    'start':'2008',
+    'end':'2012',
     'summary':''
 })
+# education.append({
+#     'title':'A/AS levels',
+#     'qualification':'AABa (Maths, Art, Physics, Computing)',
+#     'location':'Beechen Cliff School Sixth Form, Bath',
+#     'start':'2006',
+#     'end':'2008',
+#     'summary':''
+# })
 
 
 employment = []
 employment.append({
-    'position':'Graduate Engineer',
-    'date':'September 2013 to present',
-    'company':'Ramboll UK / Ramboll Computational Design',
+    'position':'Software Developer',
+    'date':'2015 to present',
+    'company':'Robert McNeel \& Associates',
     'location':'London',
+    'type': 'software',
+    'description':''
+})
+employment.append({
+    'position':'Design Technologist',
+    'date':'2015 to present',
+    'company':'Format Engineers',
+    'location':'Bath and London',
     'type': 'civil',
     'description':''
 })
 employment.append({
-    'position':'Work Placement (part-time)',
-    'date':'May 2013 to August 2013',
-    'company':'Ramboll Computational Design',
-    'location':'Bristol',
+    'position':'Graduate Engineer',
+    'date':'2013 to 2015',
+    'company':'Ramboll UK / Ramboll Computational Design',
+    'location':'Bristol and London',
     'type': 'civil',
-    'description':'''I assisted the Bristol RCD team with the design of a pavilion at Oxford Brookes University. The project involved many aspects of computational design -- from the rationalisation and analysis of complex forms through to digital fabrication techniques.'''
+    'description':''
 })
+# employment.append({
+#     'position':'Work Placement (part-time)',
+#     'date':'May 2013 to August 2013',
+#     'company':'Ramboll Computational Design',
+#     'location':'Bristol',
+#     'type': 'civil',
+#     'description':'''I assisted the Bristol RCD team with the design of a pavilion at Oxford Brookes University. The project involved many aspects of computational design -- from the rationalisation and analysis of complex forms through to digital fabrication techniques.'''
+# })
 employment.append({
     'position':'Ice Marshall (part-time)',
     'date':'November 2012 to January 2013',
@@ -72,28 +88,28 @@ employment.append({
     'description':'I recently spend the winter months working at a temporary outdoor ice rink in Bath. '
 })
 employment.append({
-    'position':'Graduate Internship',
-    'date':'June 2012 to August 2012',
+    'position':'Internship',
+    'date':'January 2012 to August 2012',
     'company':'LimitState Ltd.',
     'location':'Sheffield',
     'type': 'civil',
-    'description':'Upon completion of my undergraduate studies I returned to LimitState to continue my previous work. I was part of a small team developing a commercial geotechnical software package (C++, Qt). I investigated and fixed issues with the software as well as extending its functionality. I was fully integrated within the team and gained a great understanding of how version control (Subversion) and issue/feature tracking software (Trac) can be used to increase productivity in a collaborative development environment.'
+    'description':''
 })
-employment.append({
-    'position':'Internship (part-time)',
-    'date':'January 2012 to April 2012',
-    'company':'LimitState Ltd.',
-    'location':'Sheffield',
-    'type': 'civil',
-    'description':'I joined LimitState Ltd.\ for three months on a part-time basis as part of the Sheffield Internship Scheme. I was responsible for the design and prototyping of a new software feature as well as general testing and documentation editing.'
-})
+# employment.append({
+#     'position':'Internship (part-time)',
+#     'date':'January 2012 to April 2012',
+#     'company':'LimitState Ltd.',
+#     'location':'Sheffield',
+#     'type': 'civil',
+#     'description':'I joined LimitState Ltd.\ for three months on a part-time basis as part of the Sheffield Internship Scheme. I was responsible for the design and prototyping of a new software feature as well as general testing and documentation editing.'
+# })
 employment.append({
     'position':'Research Assistant',
     'date':'July 2011 to October 2011',
     'company':'Computational Mechanics and Design Research Group, Department of Civil and Structural Engineering',
     'location':'University of Sheffield',
     'type': 'civil',
-    'description':'My main role was to format research papers for submission (using the \LaTeX~typesetting language) as well as drawing figures and graphs (using Asymptote and Adobe Illustrator) to be included within. I also had the chance to engage with some of the ongoing research in the department, assisting with the building and processing of data from Finite Element models (using LS-DYNA/LS-PrePost) and documenting this process (including any automation scripts used) in the project\'s wiki.'
+    'description':''
 })
 
 

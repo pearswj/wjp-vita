@@ -95,7 +95,7 @@ $job.description
 \section*{Education}
 % TODO: expand, like employment (university courses in detail and the rest just bulleted)
 #for $edu in $education:
-\subsection*{$edu.title#if $edu.end != 'present'#, $edu.qualification#end if# {\it -- $edu.start to $edu.end}}\hspace*{\fill}\\[-20pt]
+\subsection*{$edu.title#if $edu.end != 'present' and $edu.qualification#, $edu.qualification#end if# {\it -- $edu.start to $edu.end}}\hspace*{\fill}\\[-20pt]
 {\it $edu.location}
 
 $edu.summary
@@ -139,28 +139,28 @@ $placement.date & $placement.title ($placement.place) \\
 
 \section*{Skills \& Interests}
 
-\begin{multicols}{2}
-\raggedcolumns
+% \begin{multicols}{2}
+% \raggedcolumns
 
-\subsection*{Technical Skills} % TODO: re-think section title?
-
-$skillsblurb\\
-
-\begin{center}
-\linethickness{2pt}
-\begin{tabular}{rl}
-%\begin{itemize}
-	#for $skill in $skills:
-	\ability{$skill.ability} & $skill.name \\
-	%\item $skill
-	#end for
-%\end{itemize}
-\end{tabular}
-\end{center}
-%\vspace{5mm}
+% \subsection*{Technical Skills} % TODO: re-think section title?
+%
+% $skillsblurb\\
+%
+% \begin{center}
+% \linethickness{2pt}
+% \begin{tabular}{rl}
+% %\begin{itemize}
+% 	#for $skill in $skills:
+% 	\ability{$skill.ability} & $skill.name \\
+% 	%\item $skill
+% 	#end for
+% %\end{itemize}
+% \end{tabular}
+% \end{center}
+% %\vspace{5mm}
 
 #if $interests:
-\columnbreak
+% \columnbreak
 
 \subsection*{Personal Skills \& Interests}
 
@@ -176,7 +176,7 @@ In my free time I enjoy...
 
 I have a full UK driving licence, with no endorsements.
 
-\end{multicols}
+% \end{multicols}
 
 \section*{References}
 
