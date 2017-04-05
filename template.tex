@@ -126,8 +126,17 @@ $placement.date & $placement.title ($placement.place) \\
 \item \fullcite{Shepherd2013}
 \end{itemize}
 
+% workshops
+% #if $workshops:
+\section*{Workshops}
+\begin{itemize}
+#for $w in $workshops:
+\item $w
+#end for
+\end{itemize}
+% #end if
 
-#if $achievements:
+% #if $achievements:
 \section*{Achievements}
 
 \begin{itemize}
@@ -135,7 +144,7 @@ $placement.date & $placement.title ($placement.place) \\
 \item $a
 #end for
 \end{itemize}
-#end if
+% #end if
 
 \section*{Skills \& Interests}
 
@@ -143,36 +152,38 @@ $placement.date & $placement.title ($placement.place) \\
 % \raggedcolumns
 
 % \subsection*{Technical Skills} % TODO: re-think section title?
-%
-% $skillsblurb\\
-%
+
+$skillsblurb %\\
+
 % \begin{center}
 % \linethickness{2pt}
 % \begin{tabular}{rl}
 % %\begin{itemize}
 % 	#for $skill in $skills:
-% 	\ability{$skill.ability} & $skill.name \\
+% 	% \ability{$skill.ability} & $skill.name \\
+% 	\raisebox{2pt}{\color{black}\line(1,0){$skill.ability}} & $skill.name \\
 % 	%\item $skill
 % 	#end for
 % %\end{itemize}
 % \end{tabular}
 % \end{center}
-% %\vspace{5mm}
+%\vspace{5mm}
 
-#if $interests:
-% \columnbreak
+% if $interests:
+% % \columnbreak
+%
+% \subsection*{Personal Skills \& Interests}
 
-\subsection*{Personal Skills \& Interests}
+% In my free time I enjoy...
+$interestsblurb
 
-In my free time I enjoy...
-
-\begin{itemize}
-	#for $item in $interests:
-	\item $item
-	#end for
-\end{itemize}
-
-#end if
+% \begin{itemize}
+% 	#for $item in $interests:
+% 	\item $item
+% 	#end for
+% \end{itemize}
+%
+% end if
 
 I have a full UK driving licence, with no endorsements.
 

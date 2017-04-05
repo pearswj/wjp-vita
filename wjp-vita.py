@@ -137,30 +137,36 @@ experience.append({
 })
 """
 
+workshops = [
+    'Smartgeometry 2016, Gothenburg -- "Calibrated Modelling of Form-Active Hybrid Structures"',
+    'Design Modelling Symposium 2015, Copenhagen -- "Archilace"'
+]
 
-skillsblurb = 'I have experience in a number of software tools and programming languages as well as an aptitude for learning something new when necessary.'
-skills = [] # escape '&' symbols!
-skills.append({'name':'C++, Visual Studio, Qt', 'ability':'120'})
-skills.append({'name':'Java, Processing, Eclipse', 'ability':'138'})
-skills.append({'name':'Bash, Python, Ruby, Matlab', 'ability':'150'})
-skills.append({'name':'\LaTeX, \BibTeX, Adobe CS', 'ability':'148'})
-skills.append({'name':'Git, Subversion', 'ability':'130'})
-skills.append({'name':'Rhino/Grasshopper, C\#', 'ability':'142'})
-skills.append({'name':'AutoCAD, ANSYS, Robot, GSA', 'ability':'80'})
-skills.append({'name':'GenerativeComponents, DesignScript', 'ability':'30'})
-skills.append({'name':'HTML, CSS, PHP, SQL', 'ability':'118'})
+skillsblurb = 'I have experience in a number of software tools and programming languages as well as an aptitude for learning something new when necessary. I use my Engineering education and passion for programming to solve both conventional and complex design problems.'
+# skills = [] # escape '&' symbols!
+# skills.append({'name':'C++, Visual Studio, Qt', 'ability':'120'})
+# skills.append({'name':'Java, Processing, Eclipse', 'ability':'138'})
+# skills.append({'name':'Bash, Python, Ruby, Matlab', 'ability':'150'})
+# skills.append({'name':'\LaTeX, Adobe CS', 'ability':'148'})
+# skills.append({'name':'Git, Subversion', 'ability':'130'})
+# skills.append({'name':'Rhino/Grasshopper, C\#', 'ability':'142'})
+# skills.append({'name':'AutoCAD, ANSYS, Robot, GSA', 'ability':'80'})
+# skills.append({'name':'GenerativeComponents, DesignScript', 'ability':'30'})
+# skills.append({'name':'HTML, CSS, PHP, SQL', 'ability':'118'})
+#
+# skills.sort(key=lambda x: int(x['ability'])) # sort by ability
+# skills.reverse()
 
-skills.sort(key=lambda x: int(x['ability'])) # sort by ability
-skills.reverse()
+# scale ability
+# for skill in skills:
+#     skill["ability"] = int(skill["ability"]) / 8
 
-for skill in skills:
-    skill["ability"] = int(skill["ability"]) / 8
+interestsblurb = 'In my free time I enjoy rock climbing and travelling.'
 
-
-interests = []
-interests.append('building, riding and maintaining bicycles')
-interests.append('playing for a local recreational ice hockey team')
-interests.append('exploring opensource software projects on Github')
+# interests = []
+# interests.append('building, riding and maintaining bicycles')
+# interests.append('playing for a local recreational ice hockey team')
+# interests.append('exploring opensource software projects on Github')
 
 
 # Git
@@ -189,10 +195,12 @@ t.personal = personal
 t.education = education
 t.employment = employment
 t.experience = experience
+t.workshops = workshops
 t.skillsblurb = skillsblurb
-t.skills = skills
+t.skills = []
 t.achievements = None
-t.interests = interests
+t.interestsblurb = interestsblurb
+t.interests = []
 t.git = git
 t.displaytypes = displaytypes
 
